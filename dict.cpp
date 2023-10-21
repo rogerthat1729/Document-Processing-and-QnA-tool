@@ -21,7 +21,7 @@ struct DictNode
 
 Dict::Dict()
 {
-    vector<vector<DictNode>> make(200003);
+    vector<vector<DictNode>> make(md);
     words = make;
     size = 0;
 }
