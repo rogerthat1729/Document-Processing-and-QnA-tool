@@ -5,6 +5,13 @@
 #include <fstream>
 using namespace std;
 
+struct DictNode
+{
+public:
+    int count = 0;
+    string word;
+};
+
 class Dict {
 private:
     // You can add attributes/helper functions here

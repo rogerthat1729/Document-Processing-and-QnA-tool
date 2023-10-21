@@ -1,5 +1,7 @@
 // Do NOT add any other includes
 #include "dict.h"
+#include <iostream>
+using namespace std;
 const int md = 200003;
 
 int hash_function(string s)
@@ -12,12 +14,6 @@ int hash_function(string s)
     }
     return h;
 }
-
-struct DictNode{
-public:
-    int count=0;
-    string word;
-};
 
 Dict::Dict()
 {
@@ -88,13 +84,20 @@ void Dict::dump_dictionary(string filename)
 {
     std::ofstream f;
     f.open(filename);
-    for(auto &x : words){
-        int n = x.size();
+    for(int j = 0; j < md; j++){
+        int n = words[j].size();
         for(int i = 0 ; i < n ; ++i)
         {
-            f << x[i].word << ", " << x[i].count << endl;
+            f << words[j][i].word << ", " << words[j][i].count << endl;
         }
     }
     f.close();
     return;
 }
+
+// int main(){
+//     Dict d;
+//     d.insert_sentence(1, 1, 1, 1, "The quick brown fox ...jumped over the lazy dog....");
+//     d.insert_sentence(1, 1, 1, 2, "The     fox is lazy brown jumper");
+//     d.dump_dictionary("output.txt");
+// }

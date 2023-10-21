@@ -1,0 +1,10 @@
+brown, 2
+is, 1
+over, 1
+dog, 1
+fox, 2
+the, 3
+quick, 1
+lazy, 2
+jumped, 1
+jumper, 1
