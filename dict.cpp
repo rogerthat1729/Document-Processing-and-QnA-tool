@@ -1,5 +1,7 @@
 // Do NOT add any other includes
 #include "dict.h"
+const int md = 200003;
+
 Dict::Dict(){
     // Implement your function here    
 }
@@ -14,11 +16,20 @@ void Dict::insert_sentence(int book_code, int page, int paragraph, int sentence_
 }
 
 int Dict::get_word_count(string word){
-    // Implement your function here  
     return -1;
 }
 
 void Dict::dump_dictionary(string filename){
     // Implement your function here  
     return;
+}
+
+int hash(string s){
+    int h = 5381;
+    int n = s.length();
+    for(int i = 0 ; i < n ; ++i)
+    {
+        h = (33*h + s[i])%md;
+    }   
+    return h;
 }
