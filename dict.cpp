@@ -2,7 +2,7 @@
 #include "dict.h"
 const int md = 200003;
 
-int hash(string s)
+int hash_function(string s)
 {
     int h = 5381;
     int n = s.length();
@@ -38,7 +38,7 @@ void Dict::insert_sentence(int book_code, int page, int paragraph, int sentence_
 
 int Dict::get_word_count(string word)
 {
-    int h = hash(word);
+    int h = hash_function(word);
     int n = words[h].size();
     for (int i = 0; i < n; ++i)
     {
