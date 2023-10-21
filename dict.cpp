@@ -30,25 +30,6 @@ Dict::~Dict()
 {
 }
 
-vector<string> sent_to_words(string sentence){
-    int i=0;
-    vector<string> words;
-    while(i<sentence.size()){
-        string curword="";
-        while(((int(sentence[i])<=122 && int(sentence[i])>=97) || (int(sentence[i])<=90 && int(sentence[i]>=65))) && i<sentence.size()){
-            if(int(sentence[i])<=122 && int(sentence[i])>=97){
-                curword+=sentence[i];
-            }
-            else{
-                curword+=char(int(sentence[i])+32);
-            }
-            i++;
-        }
-        words.push_back(curword);
-        i++;
-    }
-    return words;
-}
 
 vector<string> sent_to_words(string sentence){
     int i=0;
@@ -74,7 +55,7 @@ void Dict::insert_sentence(int book_code, int page, int paragraph, int sentence_
     vector<string> sent_words=sent_to_words(sentence);
     for(string curword: sent_words){
         if(curword!=""){
-            int hashval=hash(curword);
+            int hashval=hash_function(curword);
             int probe=0;
             while(probe<words[hashval].size() && words[hashval][probe].word!=curword){
                 probe++;
@@ -87,6 +68,7 @@ void Dict::insert_sentence(int book_code, int page, int paragraph, int sentence_
             words[hashval][probe].count++;
         }
     }
+}
     
 
 int Dict::get_word_count(string word)
