@@ -2,12 +2,19 @@
 #include "dict.h"
 const int md = 200003;
 
+
+struct DictNode{
+    int count=0;
+    string word;
+};
+
 Dict::Dict(){
-    // Implement your function here    
+    vector<vector<DictNode>> make(200003);
+    words=make;
+    size=0;
 }
 
 Dict::~Dict(){
-    // Implement your function here    
 }
 
 void Dict::insert_sentence(int book_code, int page, int paragraph, int sentence_no, string sentence){
