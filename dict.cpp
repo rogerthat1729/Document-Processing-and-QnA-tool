@@ -1,6 +1,5 @@
 // Do NOT add any other includes
 #include "dict.h"
-//lowdu ioewnfinwr
 Dict::Dict(){
     // Implement your function here    
 }
