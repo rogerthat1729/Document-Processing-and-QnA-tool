@@ -26,7 +26,6 @@ Dict::~Dict()
 {
 }
 
-
 vector<string> sent_to_words(string sentence){
     int i=0;
     vector<string> words;
@@ -66,7 +65,6 @@ void Dict::insert_sentence(int book_code, int page, int paragraph, int sentence_
     }
 }
     
-
 int Dict::get_word_count(string word)
 {
     int h = hash_function(word);
