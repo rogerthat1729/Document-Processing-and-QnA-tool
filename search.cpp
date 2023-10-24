@@ -85,7 +85,7 @@ Node *SearchEngine::search(string pattern, int &n_matches)
             curr=curr->right;
         }
     }
-    temp=head;
+    Node* temp=head;
     head=head->right;
     delete temp;
     return head;
