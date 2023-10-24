@@ -7,8 +7,8 @@ using namespace std;
 
 class SearchEngine {
 private:
-    // You can add attributes/helper functions here
-
+    vector<string> sentences;
+    vector<vector<int>> data;
 public: 
     /* Please do not touch the attributes and 
     functions within the guard lines placed below  */

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 const int md = 200003;
-const vector<int> sep{32, 46, 44, 45, 58, 33, 40, 41, 63, 8212, 91, 93, 8220, 8221, 8216, 8217, 729, 59, 64, 59};
+const vector<int> sep{32, 46, 44, 45, 58, 33, 40, 41, 63, 8212, 91, 93, 8220, 8221, 8216, 8217, 729, 59, 64, 59, 39, 34};
 
 bool find_in_sep(char c)
 {
