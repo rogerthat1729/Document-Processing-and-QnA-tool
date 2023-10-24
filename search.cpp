@@ -43,7 +43,7 @@ vector<int> KMPTable(string s)
             }
         }
         pos++;
-        cnd++
+        cnd++;
     }
     t[pos] = cnd;
     return t;
@@ -57,5 +57,30 @@ Node *SearchEngine::search(string pattern, int &n_matches)
     {
         
     }
+}
+
+vector<int> KMP(vector<int> table, string pattern, string sentence){
+    vector<int> offsets;
+    int i,j; i=0; j=0;
+    while(i<sentence.size()){
+        if(pattern[j]==sentence[i]){
+            i++; j++;
+            if(j==pattern.size()){
+                offsets.push_back(i-j);
+                j=table[j];
+            }
+        }
+        else{
+            j=table[j];
+            if(j<0){
+                i++; j++;
+            }
+        }
+    }
+}
+
+Node* SearchEngine::search(string pattern, int& n_matches){
+    // Implement your function here
+
     return nullptr;
 }
