@@ -49,16 +49,6 @@ vector<int> KMPTable(string s)
     return t;
 }
 
-Node *SearchEngine::search(string pattern, int &n_matches)
-{
-    Node* head = new Node(0, 0, 0, 0, 0);
-    Node* curr = head;
-    for (string s : sentences)
-    {
-        
-    }
-}
-
 vector<int> KMP(vector<int> table, string pattern, string sentence){
     vector<int> offsets;
     int i,j; i=0; j=0;
@@ -79,8 +69,24 @@ vector<int> KMP(vector<int> table, string pattern, string sentence){
     }
 }
 
-Node* SearchEngine::search(string pattern, int& n_matches){
-    // Implement your function here
-
-    return nullptr;
+Node *SearchEngine::search(string pattern, int &n_matches)
+{
+    vector<int> tab=KMPTable(pattern);
+    Node* head = new Node(0, 0, 0, 0, 0);
+    Node* curr = head;
+    for (int i=0; i<sentences.size(); i++)
+    {
+        string s=sentences[i];
+        vector<int> props=data[i];
+        vector<int> offs=KMP(tab,pattern,s);
+        for(int itr: offs){
+            Node* newnode= new Node(props[0],props[1],props[2],props[3],itr);
+            curr->right=newnode;
+            curr=curr->right;
+        }
+    }
+    temp=head;
+    head=head->right;
+    delete temp;
+    return head;
 }
