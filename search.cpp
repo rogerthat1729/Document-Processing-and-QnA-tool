@@ -5,16 +5,8 @@ SearchEngine::SearchEngine()
 {
 }
 
-SearchEngine::~SearchEngine()
-{
-}
-
-vector<int> KMP(string s ,vector<int> table)
-{
-    int i = 0, j = 0;
-    while(i < s.length()){
-        
-    }
+SearchEngine::~SearchEngine(){
+    // Implement your function here  
 }
 
 void SearchEngine::insert_sentence(int book_code, int page, int paragraph, int sentence_no, string sentence)
